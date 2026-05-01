@@ -1,0 +1,23 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  @apply bg-white text-gray-900 transition-colors duration-500;
+}
+
+html.dark body {
+  @apply bg-black text-white;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradientMove 3s linear infinite;
+}
